@@ -1,7 +1,7 @@
 # mcp-adapter
 
-[![CI](https://github.com/mcpadapter/mcp-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/mcpadapter/mcp-adapter/actions/workflows/ci.yml)
-[![Release](https://github.com/mcpadapter/mcp-adapter/actions/workflows/release.yml/badge.svg)](https://github.com/mcpadapter/mcp-adapter/actions/workflows/release.yml)
+[![CI](https://github.com/xenixo/mcp-adapter/actions/workflows/ci.yml/badge.svg)](https://github.com/xenixo/mcp-adapter/actions/workflows/ci.yml)
+[![Release](https://github.com/xenixo/mcp-adapter/actions/workflows/release.yml/badge.svg)](https://github.com/xenixo/mcp-adapter/actions/workflows/release.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **mcp-adapter** is a production-grade CLI tool for discovering, installing, and running [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers through a unified interface.
@@ -27,27 +27,27 @@ MCP servers are written in different languages (Node.js, Python, Go) and use dif
 ### Homebrew (Recommended)
 
 ```bash
-brew tap mcpadapter/tap
+brew tap xenixo/tap
 brew install mcp-adapter
 ```
 
 ### Binary Download
 
-Download the latest release from [GitHub Releases](https://github.com/mcpadapter/mcp-adapter/releases):
+Download the latest release from [GitHub Releases](https://github.com/xenixo/mcp-adapter/releases):
 
 ```bash
 # macOS (Apple Silicon)
-curl -Lo mcp-adapter https://github.com/mcpadapter/mcp-adapter/releases/latest/download/mcp-adapter-darwin-arm64
+curl -Lo mcp-adapter https://github.com/xenixo/mcp-adapter/releases/latest/download/mcp-adapter-darwin-arm64
 chmod +x mcp-adapter
 sudo mv mcp-adapter /usr/local/bin/
 
 # macOS (Intel)
-curl -Lo mcp-adapter https://github.com/mcpadapter/mcp-adapter/releases/latest/download/mcp-adapter-darwin-amd64
+curl -Lo mcp-adapter https://github.com/xenixo/mcp-adapter/releases/latest/download/mcp-adapter-darwin-amd64
 chmod +x mcp-adapter
 sudo mv mcp-adapter /usr/local/bin/
 
 # Linux (amd64)
-curl -Lo mcp-adapter https://github.com/mcpadapter/mcp-adapter/releases/latest/download/mcp-adapter-linux-amd64
+curl -Lo mcp-adapter https://github.com/xenixo/mcp-adapter/releases/latest/download/mcp-adapter-linux-amd64
 chmod +x mcp-adapter
 sudo mv mcp-adapter /usr/local/bin/
 ```
@@ -55,13 +55,13 @@ sudo mv mcp-adapter /usr/local/bin/
 ### From Source
 
 ```bash
-go install github.com/mcpadapter/mcp-adapter/cmd/mcp-adapter@latest
+go install github.com/xenixo/mcp-adapter/cmd/mcp-adapter@latest
 ```
 
 Or build from source:
 
 ```bash
-git clone https://github.com/mcpadapter/mcp-adapter.git
+git clone https://github.com/xenixo/mcp-adapter.git
 cd mcp-adapter
 make build
 ```

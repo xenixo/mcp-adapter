@@ -24,7 +24,7 @@ Please be respectful and constructive in all interactions. We're all here to bui
    ```
 3. Add the upstream remote:
    ```bash
-   git remote add upstream https://github.com/mcpadapter/mcp-adapter.git
+   git remote add upstream https://github.com/xenixo/mcp-adapter.git
    ```
 4. Install dependencies:
    ```bash

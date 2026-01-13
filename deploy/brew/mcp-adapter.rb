@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Homebrew formula for mcp-adapter
-# To install: brew install mcpadapter/tap/mcp-adapter
+# To install: brew install xenixo/tap/mcp-adapter
 class McpAdapter < Formula
   desc "CLI tool for discovering, installing, and running MCP servers"
   homepage "https://github.com/mcpadapter/mcp-adapter"

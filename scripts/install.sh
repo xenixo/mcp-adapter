@@ -1,10 +1,10 @@
 #!/bin/bash
 # Install script for mcp-adapter
-# Usage: curl -sSL https://raw.githubusercontent.com/mcpadapter/mcp-adapter/main/scripts/install.sh | bash
+# Usage: curl -sSL https://raw.githubusercontent.com/xenixo/mcp-adapter/main/scripts/install.sh | bash
 
 set -euo pipefail
 
-REPO="mcpadapter/mcp-adapter"
+REPO="xenixo/mcp-adapter"
 INSTALL_DIR="/usr/local/bin"
 BINARY_NAME="mcp-adapter"
 

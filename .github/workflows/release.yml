@@ -34,17 +34,17 @@ jobs:
         id: version
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
+      - name: Create dist directory
+        run: mkdir -p dist
+
       - name: Build Darwin ARM64
-        run: |
-          CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-arm64 ./cmd/mcp-adapter
+        run: CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-arm64 ./cmd/mcp-adapter
 
       - name: Build Darwin AMD64
-        run: |
-          CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-amd64 ./cmd/mcp-adapter
+        run: CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-amd64 ./cmd/mcp-adapter
 
       - name: Build Linux AMD64
-        run: |
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-linux-amd64 ./cmd/mcp-adapter
+        run: CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-linux-amd64 ./cmd/mcp-adapter
 
       - name: Create checksums
         run: |

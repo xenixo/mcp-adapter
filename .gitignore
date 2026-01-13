@@ -1,0 +1,40 @@
+# Binaries
+mcp-adapter
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Build output
+/dist/
+/bin/
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+coverage.html
+
+# Dependency directories
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Debug
+debug
+*.log
+
+# Local development
+.env
+.env.local

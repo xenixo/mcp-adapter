@@ -1,0 +1,95 @@
+version: "1"
+servers:
+  - name: filesystem
+    description: MCP server for filesystem operations
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-filesystem"
+      version: "2025.12.18"
+    entrypoint: mcp-server-filesystem
+    transport: stdio
+    runtime:
+      node: ">=18"
+    args: []
+    env: {}
+
+  - name: memory
+    description: MCP server for in-memory key-value storage
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-memory"
+      version: "2025.11.25"
+    entrypoint: mcp-server-memory
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: github
+    description: MCP server for GitHub API integration
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-github"
+      version: "2025.4.8"
+    entrypoint: mcp-server-github
+    transport: stdio
+    runtime:
+      node: ">=18"
+    env:
+      GITHUB_PERSONAL_ACCESS_TOKEN: ""
+
+  - name: postgres
+    description: MCP server for PostgreSQL database access
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-postgres"
+      version: "0.6.2"
+    entrypoint: mcp-server-postgres
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: slack
+    description: MCP server for Slack integration
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-slack"
+      version: "2025.4.25"
+    entrypoint: mcp-server-slack
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: brave-search
+    description: MCP server for Brave Search API
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-brave-search"
+      version: "0.6.2"
+    entrypoint: mcp-server-brave-search
+    transport: stdio
+    runtime:
+      node: ">=18"
+    env:
+      BRAVE_API_KEY: ""
+
+  - name: everything
+    description: MCP reference server with prompts, resources, and tools
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-everything"
+      version: "2025.11.25"
+    entrypoint: mcp-server-everything
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: sequential-thinking
+    description: MCP server for sequential thinking and reasoning
+    type: node
+    source:
+      npm: "@modelcontextprotocol/server-sequential-thinking"
+      version: "2025.4.25"
+    entrypoint: mcp-server-sequential-thinking
+    transport: stdio
+    runtime:
+      node: ">=18"

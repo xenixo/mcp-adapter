@@ -100,8 +100,27 @@ func runServer(app *App, serverName string, args, envVars []string, stdio bool) 
 		return fmt.Errorf("runtime version %s does not meet requirement %s", rt.Version, versionReq)
 	}
 
-	// Parse environment variables
+	// Load saved configuration
+	savedConfig, err := GetServerConfig(app, serverName)
+	if err != nil {
+		app.Logger.Debug("failed to load server config", zap.Error(err))
+	}
+
+	// Merge environment variables: saved config < command line
 	env := make(map[string]string)
+	
+	// First, apply saved config
+	if savedConfig != nil {
+		for k, v := range savedConfig.Env {
+			env[k] = v
+		}
+		// Prepend saved args
+		if len(savedConfig.Args) > 0 {
+			args = append(savedConfig.Args, args...)
+		}
+	}
+
+	// Then, apply command line env vars (override saved)
 	for _, e := range envVars {
 		for i, c := range e {
 			if c == '=' {

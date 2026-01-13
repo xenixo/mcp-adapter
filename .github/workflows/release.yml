@@ -21,8 +21,11 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.22'
+          go-version: '1.22.x'
           cache: true
+
+      - name: Download dependencies
+        run: go mod download
 
       - name: Get version
         id: version

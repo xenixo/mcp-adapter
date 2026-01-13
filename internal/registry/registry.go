@@ -10,7 +10,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/mcpadapter/mcp-adapter/internal/manifest"
+	"github.com/xenixo/mcp-adapter/internal/manifest"
 )
 
 // Registry manages MCP server definitions.

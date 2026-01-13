@@ -8,7 +8,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/mcpadapter/mcp-adapter/internal/config"
+	"github.com/xenixo/mcp-adapter/internal/config"
 )
 
 var (

@@ -9,9 +9,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mcpadapter/mcp-adapter/internal/installer"
-	"github.com/mcpadapter/mcp-adapter/internal/registry"
-	"github.com/mcpadapter/mcp-adapter/manifests"
+	"github.com/xenixo/mcp-adapter/internal/installer"
+	"github.com/xenixo/mcp-adapter/internal/registry"
+	"github.com/xenixo/mcp-adapter/manifests"
 )
 
 func newUninstallCmd(app *App) *cobra.Command {

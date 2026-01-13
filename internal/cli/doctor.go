@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/mcpadapter/mcp-adapter/internal/runtime"
+	"github.com/xenixo/mcp-adapter/internal/runtime"
 )
 
 func newDoctorCmd(app *App) *cobra.Command {

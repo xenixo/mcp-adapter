@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/mcpadapter/mcp-adapter/internal/manifest"
-	"github.com/mcpadapter/mcp-adapter/internal/security"
+	"github.com/xenixo/mcp-adapter/internal/manifest"
+	"github.com/xenixo/mcp-adapter/internal/security"
 )
 
 // Result represents the result of an installation.

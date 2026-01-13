@@ -1,4 +1,4 @@
-module github.com/mcpadapter/mcp-adapter
+module github.com/xenixo/mcp-adapter
 
 go 1.22.2
 

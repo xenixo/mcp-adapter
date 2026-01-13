@@ -3,7 +3,7 @@ package registry
 import (
 	"testing"
 
-	"github.com/mcpadapter/mcp-adapter/internal/manifest"
+	"github.com/xenixo/mcp-adapter/internal/manifest"
 )
 
 func TestRegistryLoadFromBytes(t *testing.T) {

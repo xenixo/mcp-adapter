@@ -13,12 +13,12 @@ import (
 	"github.com/spf13/cobra"
 	"go.uber.org/zap"
 
-	"github.com/mcpadapter/mcp-adapter/internal/installer"
-	"github.com/mcpadapter/mcp-adapter/internal/launcher"
-	"github.com/mcpadapter/mcp-adapter/internal/manifest"
-	"github.com/mcpadapter/mcp-adapter/internal/registry"
-	"github.com/mcpadapter/mcp-adapter/internal/runtime"
-	"github.com/mcpadapter/mcp-adapter/manifests"
+	"github.com/xenixo/mcp-adapter/internal/installer"
+	"github.com/xenixo/mcp-adapter/internal/launcher"
+	"github.com/xenixo/mcp-adapter/internal/manifest"
+	"github.com/xenixo/mcp-adapter/internal/registry"
+	"github.com/xenixo/mcp-adapter/internal/runtime"
+	"github.com/xenixo/mcp-adapter/manifests"
 )
 
 func newRunCmd(app *App) *cobra.Command {

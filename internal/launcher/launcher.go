@@ -14,9 +14,9 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/mcpadapter/mcp-adapter/internal/config"
-	"github.com/mcpadapter/mcp-adapter/internal/manifest"
-	"github.com/mcpadapter/mcp-adapter/internal/runtime"
+	"github.com/xenixo/mcp-adapter/internal/config"
+	"github.com/xenixo/mcp-adapter/internal/manifest"
+	"github.com/xenixo/mcp-adapter/internal/runtime"
 )
 
 // State represents the state of a launched server.

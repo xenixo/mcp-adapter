@@ -24,10 +24,46 @@ jobs:
           go-version: stable
           cache: true
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v6
+      - name: Debug info
+        run: |
+          echo "Go version:"
+          go version
+          echo "Module info:"
+          go list -m
+          echo "Files:"
+          ls -la
+
+      - name: Test build
+        run: go build -v ./cmd/mcp-adapter
+
+      - name: Build all platforms
+        run: |
+          mkdir -p dist
+          
+          echo "Building darwin/arm64..."
+          CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-arm64 ./cmd/mcp-adapter
+          
+          echo "Building darwin/amd64..."
+          CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-darwin-amd64 ./cmd/mcp-adapter
+          
+          echo "Building linux/amd64..."
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-s -w" -o dist/mcp-adapter-linux-amd64 ./cmd/mcp-adapter
+          
+          echo "Build complete!"
+          ls -la dist/
+
+      - name: Create checksums
+        run: |
+          cd dist
+          sha256sum * > checksums.txt
+          cat checksums.txt
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
         with:
-          version: latest
-          args: release --clean
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            dist/mcp-adapter-darwin-arm64
+            dist/mcp-adapter-darwin-amd64
+            dist/mcp-adapter-linux-amd64
+            dist/checksums.txt
+          generate_release_notes: true

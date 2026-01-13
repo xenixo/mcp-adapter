@@ -25,7 +25,8 @@ builds:
       - -X github.com/xenixo/mcp-adapter/internal/cli.BuildDate={{.Date}}
 
 archives:
-  - format: binary
+  - formats:
+      - binary
     name_template: "{{ .Binary }}-{{ .Os }}-{{ .Arch }}"
 
 checksum:

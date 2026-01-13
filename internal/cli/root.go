@@ -102,6 +102,7 @@ Features:
 	rootCmd.AddCommand(newRunCmd(app))
 	rootCmd.AddCommand(newDoctorCmd(app))
 	rootCmd.AddCommand(newUninstallCmd(app))
+	rootCmd.AddCommand(newRegistryCmd(app))
 
 	return rootCmd
 }

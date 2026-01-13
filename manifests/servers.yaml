@@ -1,5 +1,6 @@
 version: "1"
 servers:
+  # === Official MCP Servers ===
   - name: filesystem
     description: MCP server for filesystem operations
     type: node
@@ -10,8 +11,6 @@ servers:
     transport: stdio
     runtime:
       node: ">=18"
-    args: []
-    env: {}
 
   - name: memory
     description: MCP server for in-memory key-value storage
@@ -93,3 +92,75 @@ servers:
     transport: stdio
     runtime:
       node: ">=18"
+
+  # === Community MCP Servers ===
+  - name: playwright
+    description: MCP server for browser automation with Playwright
+    type: node
+    source:
+      npm: "@anthropics/mcp-server-playwright"
+      version: "0.1.0"
+    entrypoint: mcp-server-playwright
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: cloudflare
+    description: MCP server for Cloudflare API
+    type: node
+    source:
+      npm: "@anthropics/mcp-server-cloudflare"
+      version: "0.1.0"
+    entrypoint: mcp-server-cloudflare
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: exa
+    description: MCP server for Exa AI search
+    type: node
+    source:
+      npm: "@anthropics/mcp-server-exa"
+      version: "0.1.0"
+    entrypoint: mcp-server-exa
+    transport: stdio
+    runtime:
+      node: ">=18"
+    env:
+      EXA_API_KEY: ""
+
+  - name: raygun
+    description: MCP server for Raygun error tracking
+    type: node
+    source:
+      npm: "@anthropics/mcp-server-raygun"
+      version: "0.1.0"
+    entrypoint: mcp-server-raygun
+    transport: stdio
+    runtime:
+      node: ">=18"
+
+  - name: sentry
+    description: MCP server for Sentry error tracking
+    type: node
+    source:
+      npm: "@anthropics/mcp-server-sentry"
+      version: "0.1.0"
+    entrypoint: mcp-server-sentry
+    transport: stdio
+    runtime:
+      node: ">=18"
+    env:
+      SENTRY_AUTH_TOKEN: ""
+
+  # === Python MCP Servers ===
+  - name: mcp-python
+    description: MCP server for Python code execution
+    type: python
+    source:
+      pypi: "mcp-server-python"
+      version: "0.1.0"
+    entrypoint: mcp-server-python
+    transport: stdio
+    runtime:
+      python: ">=3.10"
